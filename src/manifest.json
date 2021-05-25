@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "gmail-survey-link-updater",
-  "short_name": "gmail-survey-link-updater",
-  "description": "",
+  "name": "SurveyStance",
+  "short_name": "SurveyStance",
+  "description": "Email Signature Survey",
   "version": "1.0.0",
   "permissions": ["activeTab", "storage"],
   "content_scripts": [

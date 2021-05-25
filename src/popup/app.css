@@ -35,7 +35,25 @@ button {
   justify-content: flex-end;
 }
 
+.container {
+  padding: 5px 5px;
+  margin: 15px 5px;
+}
+
+.logo {
+  width: 150px;
+  padding-bottom: 10px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
 fieldset {
-  padding: 20px 5px 20px 11px;
-  margin: 10px;
+  border-color: #00a69c78;
+}
+
+legend {
+  color: #00a69c;
 }
