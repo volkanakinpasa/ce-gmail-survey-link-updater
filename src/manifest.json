@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "gmail-survey-link-updater",
+  "short_name": "gmail-survey-link-updater",
+  "description": "",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["*://mail.google.com/*", "*://inbox.google.com/*"],
+      "js": ["content.bundle.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": ["background.bundle.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "128.png"
+  },
+  "icons": {
+    "128": "128.png"
+  },
+  "web_accessible_resources": ["*"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}

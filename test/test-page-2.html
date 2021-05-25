@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  </head>
+  <body>
+    <div style="border: 1px #cccccc solid; padding: 5px; background: #fff">
+      <br />
+      <span style="font-size: 14px; color: #000000"
+        ><b>How was my service today?</b></span
+      >
+      <table>
+        <tr>
+          <td
+            style="padding-top: 0px; padding-right: 0px; line-height: 0px"
+            valign="middle"
+          >
+            <a
+              href="https://portal.surveystance.com/email-feedback/eyJzdXJ2ZXlzdGFuY2VudW1iZXIiOiJNRGd6TURZM05BPT00ODU4In0=/1?email={email}"
+              ><img
+                src="https://devportal.surveystance.com/assets/img/ratings/emoji2_scale_1_4/1.png"
+                height="27"
+                width="28"
+                style="height: 27px; width: 28px"
+            /></a>
+          </td>
+          <td></td>
+          <td
+            style="padding-top: 0px; padding-right: 0px; line-height: 0px"
+            valign="middle"
+          >
+            <a
+              href="https://portal.surveystance.com/email-feedback/eyJzdXJ2ZXlzdGFuY2VudW1iZXIiOiJNRGd6TURZM05BPT00ODU4In0=/2?email={email}"
+              ><img
+                src="https://devportal.surveystance.com/assets/img/ratings/emoji2_scale_1_4/2.png"
+                height="27"
+                width="28"
+                style="height: 27px; width: 28px"
+            /></a>
+          </td>
+          <td></td>
+          <td
+            style="padding-top: 0px; padding-right: 0px; line-height: 0px"
+            valign="middle"
+          >
+            <a
+              href="https://portal.surveystance.com/email-feedback/eyJzdXJ2ZXlzdGFuY2VudW1iZXIiOiJNRGd6TURZM05BPT00ODU4In0=/3?email={email}"
+              ><img
+                src="https://devportal.surveystance.com/assets/img/ratings/emoji2_scale_1_4/3.png"
+                height="27"
+                width="28"
+                style="height: 27px; width: 28px"
+            /></a>
+          </td>
+          <td></td>
+          <td
+            style="padding-top: 0px; padding-right: 0px; line-height: 0px"
+            valign="middle"
+          >
+            <a
+              href="https://portal.surveystance.com/email-feedback/eyJzdXJ2ZXlzdGFuY2VudW1iZXIiOiJNRGd6TURZM05BPT00ODU4In0=/4?email={email}"
+              ><img
+                src="https://devportal.surveystance.com/assets/img/ratings/emoji2_scale_1_4/4.png"
+                height="27"
+                width="28"
+                style="height: 27px; width: 28px"
+            /></a>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      return;
+      function escapeRegExp(string) {
+        return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1');
+      }
+
+      const tagName = '{email}';
+      $('a').each((i, node) => {
+        const regexPattern = escapeRegExp(tagName);
+        const href = $(node).attr('href');
+
+        console.log({ i, node, href: $(node).attr('href') });
+
+        const exp = new RegExp(regexPattern, 'gi');
+        var match = exp.exec(href);
+        console.log({ match });
+        const hrefReplaced = href.replace(
+          new RegExp(tagName, 'gi'),
+          'myemail@gmail.com'
+        );
+        console.log({ hrefReplaced });
+        $(node).attr('href', hrefReplaced);
+      });
+    </script>
+  </body>
+</html>
