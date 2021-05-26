@@ -17,7 +17,6 @@ const regexFlag = 'gi';
 
 const getRegex = (regexPattern) => {
   const encoded = encodeURIString(regexPattern);
-  console.log({ regexPattern, encoded });
   return new RegExp(`${escapeRegExp(regexPattern)}|${encoded}`, regexFlag);
 };
 
@@ -32,17 +31,28 @@ const updateQueryParameterInLinks = (
     .each((i, node) => {
       logUtils.consoleLog('each');
       const href = $(node).attr('href');
-      // console.log({ i, node, href: $(node).attr('href') });
-
-      // let match = exp.exec(href);
-
-      // console.log({ match });
       const hrefReplaced = href.replace(getRegex(tagName), regexValueToUpdate);
-      // console.log({ hrefReplaced });
       $(node).attr('href', hrefReplaced);
     });
   logUtils.consoleLog('updateQueryParameterInLinks bitti');
 };
 
-const contentUtils = { updateQueryParameterInLinks, avoidSending };
+const getUpdatedTagNameInBody = async (
+  bodyHtml,
+  tagName,
+  regexValueToUpdate
+) => {
+  const exp = new RegExp(getRegex(tagName), 'gim');
+  var match = exp.exec(bodyHtml);
+  if (match) {
+    bodyHtml = bodyHtml.replace(exp, regexValueToUpdate);
+    return bodyHtml;
+  } else null;
+};
+
+const contentUtils = {
+  updateQueryParameterInLinks,
+  avoidSending,
+  getUpdatedTagNameInBody,
+};
 export default contentUtils;
