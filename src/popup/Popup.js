@@ -37,16 +37,13 @@ const Popup = () => {
 
   return (
     <>
-      <div className='container'>
-        <div className='logo-container'>
-          <img
-            className='logo'
-            src={chrome.runtime.getURL('survey-stance-logo.png')}
-          />
+      <div className="container">
+        <div className="logo-container">
+          <img className="logo" src={chrome.runtime.getURL('[logo].png')} />
         </div>
         <fieldset>
           <legend>Options</legend>
-          <div className='pb-10'>
+          <div className="pb-10">
             <div>Tag Name</div>
             <div>
               <input

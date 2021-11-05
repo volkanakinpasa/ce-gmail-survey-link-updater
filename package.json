@@ -1,5 +1,5 @@
 {
-  "name": "survey-stance",
+  "name": "ce-gmail-survey-link-updater",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -21,7 +21,6 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.2",
-    "easytimer.js": "^4.3.4",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "postcss-loader": "^5.2.0",
@@ -31,15 +30,7 @@
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkanakinpasa/gmail-send-voice-record.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/volkanakinpasa/gmail-send-voice-record/issues"
-  },
-  "homepage": "https://github.com/volkanakinpasa/gmail-send-voice-record#readme"
+  "license": "ISC"
 }
